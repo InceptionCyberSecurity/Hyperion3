@@ -1,17 +1,13 @@
 # Hyperion v3.1 For Archlinux/Blackarch or Kali.
-Install ArchLinux, then convert to BlackArch. See https://www.blackarch.org/downloads.html
-Backend scripts used to drive results-based automated IT Security system for arcadeusops.com.com. Written in Bash and Python v3.5+
+Install ArchLinux, then convert to BlackArch, see https://www.blackarch.org/downloads.html, or use Kali Linux in VirtualBox.
+Backend scripts used to drive results-based automated IT Security system for arcadeusops.com. Written in Bash and Python v3.5+.
 
 # Usage
 * Most scripts take two command line arguments, the IP address or domain name, and directory to store reports.
-* For example ./osint google.com mydirectory. See READMEscripts.md for details of command line arguments.
+* For example ./osint mysite.com mydirectory. See READMEscripts.md for details of command line arguments.
 * Reports are in a custom directory which is displayed at command prompt after completion.
 
 # Hyperion v3.1 Scripts
-
-# Whitebox and Blackbox
-wbox.sh - for whitebox tetsing with given target and other info like OS/kernel version, open ports, device type.
-bbox.sh - for blackbox tetsing with IP/doman name only known.
 
 # Vulnerabilities
 exploit.sh - nmap and searchsploit (exploitdb) for exploit discovery.
