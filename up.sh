@@ -2,7 +2,12 @@
 # use only for Hyperion v2.x on Archlinux/Blackarch
 export LC_ALL="en_US.UTF-8"
 sudo nmap --script-update
-sudo pacman -Syu
+# sudo pacman -Syu # for Archlinux
+sudo apt update
+sudo apt upgrade -y
+sudo apt dist-upgrade -y
+sudo autoclean -y
+sudo apt autoremove -y
 # clean up diskspace
 sudo find /tmp -type f -atime +10 -delete
 sudo journalctl --rotate
@@ -21,7 +26,7 @@ sar -q > sarq.txt
 sar -u > saru.txt
 ausearch -f /etc/passwd > audit.txt
 echo " "
-echo " Running Tecmint's Server Info Script. "
+echo " Running Tecmint's Server Info Script. " # see https://www.tecmint.com/linux-server-health-monitoring-script/
 echo " "
 sleep 5
 monitor

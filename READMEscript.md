@@ -48,7 +48,3 @@ we.sh
 iker.py
 pyflooder.py
 rapidscan.py
-
-# TODO
-bbox.sh
-wbox.sh

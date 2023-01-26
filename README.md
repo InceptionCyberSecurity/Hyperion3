@@ -1,6 +1,6 @@
-# Hyperion v3.1 For Archlinux/Blackarch
+# Hyperion v3.1 For Archlinux/Blackarch or Kali.
 Install ArchLinux, then convert to BlackArch. See https://www.blackarch.org/downloads.html
-Backend scripts used to drive results-based automated IT Security system janustests.com. Written in Bash and Python v3.5+
+Backend scripts used to drive results-based automated IT Security system for arcadeusops.com.com. Written in Bash and Python v3.5+
 
 # Usage
 * Most scripts take two command line arguments, the IP address or domain name, and directory to store reports.
@@ -62,9 +62,7 @@ dr.sh - nmap scripts to test for SSL vulnerabilities of POODLE and DROWN.
 simlink attacks https://www.anvilventures.com/blog/defeating-secure-boot-with-symlink-attacks.html
 VPS tests https://blog.eldernode.com/how-to-test-security-of-vps/ and https://www.anvilventures.com/blog/defeating-secure-boot-with-symlink-attacks.html
 APIs eg Shodan https://nmap.org/nsedoc/scripts/shodan-api.html
-Code Reviews via command line
 Vulnerability Analysis using Nessus and OpenVAS via command line
-Mobile Apps via command line
 DNS Servers --script dns*
 Buffer Overflow nmap exploit script for Windows Server/IIS  eg  https://exploit.kitploit.com/2017/04/ms-iis-60-buffer-overflow-nse-script.html
 Keylogger detection eg https://thegeekpage.com/detect-keylogger-rat/
@@ -75,4 +73,3 @@ SSH private key exchange rather than public key/password logon
 
 # UPDATES
 Lynis see https://docs.nextcloudpi.com/en/how-to-update-lynis/
-up.sh - post-install update script
