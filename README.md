@@ -1,4 +1,5 @@
 # Hyperion v3.1 For Archlinux/Blackarch
+Install ArchLinux, then convert to BlackArch. See https://www.blackarch.org/downloads.html
 Backend scripts used to drive results-based automated IT Security system janustests.com. Written in Bash and Python v3.5+
 
 # Usage
