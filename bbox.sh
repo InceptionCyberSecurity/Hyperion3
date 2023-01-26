@@ -5,7 +5,7 @@
 # Second Argument $2: $udir directory to store reports
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8 or google.com
-udir="$2" # directory for reports
+udir="$2" # directory for reports 
 
 # nmap aggressive vulnerability scan
 sudo nmap -vv -p- -A -T4 --script vuln --script http* --script malware --script safe --script dos --script discovery --script exploit --script brute $userIP -oX ntest.xml

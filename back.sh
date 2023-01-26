@@ -5,7 +5,7 @@
 # Second Argument $2: $udir directory to store reports
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8
-udir="$2" # directory for reports
+udir="$2" # directory for reports 
 
 # shellshock
 sudo nmap -sV -p- --script http-shellshock $userIP -oX shell.xml
