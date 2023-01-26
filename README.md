@@ -60,7 +60,7 @@ simlink attacks https://www.anvilventures.com/blog/defeating-secure-boot-with-sy
 VPS tests https://blog.eldernode.com/how-to-test-security-of-vps/ and https://www.anvilventures.com/blog/defeating-secure-boot-with-symlink-attacks.html
 APIs eg Shodan https://nmap.org/nsedoc/scripts/shodan-api.html
 Vulnerability Analysis using Nessus and OpenVAS via command line
-DNS Servers --script dns*
+DNS Servers --script dns* or finalrecon. Possibly add dedicated OSINT script.
 Buffer Overflow nmap exploit script for Windows Server/IIS  eg  https://exploit.kitploit.com/2017/04/ms-iis-60-buffer-overflow-nse-script.html
 Keylogger detection eg https://thegeekpage.com/detect-keylogger-rat/
 Remote Access Trojan RAT detection eg https://redcanary.com/blog/detecting-remote-access-trojan/ and https://github.com/nict-csl/NanoCoreRAT-Analysis
