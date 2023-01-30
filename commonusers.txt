@@ -30,3 +30,5 @@ Admin
 Administrator
 Anonymous
 anonymous
+user
+User

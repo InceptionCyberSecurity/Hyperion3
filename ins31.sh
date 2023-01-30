@@ -1,18 +1,17 @@
 #!/bin/bash
-# Hyperion v3.x by ducatinat nathan.jones@janustests.com; ArchLinux/Blackarch Germany server
-# Shodan API key ljXIxGyEVp2WhK47K5mrF5cbAaPS44fr#
+# Hyperion v3.x by ducatinat nathan.jones@arcadeusops.com; ArchLinux/Blackarch Germany server where appropriate
+# otgherise Ubuntu .
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 # sudo pacman -S docker   sudo systemctl status docker    sudo docker version    sudo systemctl stop docker
 #
 export LC_ALL="en_US.UTF-8"
 cd /
 cd root
-echo " Welcome to the Hyperion v3.1 Base Installation Script for janustests.com, "
-echo " based on ArchLinux/Blackarch. This script will install all base requirements "
-echo " and pre-harden up the base ArchLinux server. "
+echo " Welcome to the Hyperion v3.1 Base Installation Script. "
+echo " This script will install all base requirements and pre-harden up the base server. "
 echo " "
-echo " IMPORTANT: Add multilib repos to /etc/pacman.conf before you start and "
-echo " install ArchLinux and BlackArch before you proceed. Happy Hacking!"
+# echo " IMPORTANT: Add multilib repos to /etc/pacman.conf before you start and "
+# echo " install ArchLinux and BlackArch before you proceed. Happy Hacking!"
 echo " "
 sleep 10
 echo " "
@@ -22,12 +21,12 @@ echo " "
 # https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib     DO THIS !!
 # DO NOT INSTALL UNTIL ABOVE HAS BEEN DONE! pacman help at https://linuxhint.com/pacman_arch_linux/
 # ##########################################################################################################################################################
-sudo pacman -S reflector
+# sudo pacman -S reflector
 # get reflector to generate 30 fatstest mirrors. Change for local server location
-reflector --verbose --country 'France,Germany,Austria,Bulgaria,Denmark,Greece,Hungary,Russia,Sweden,Switzerland,UnitedKingdom,Poland,Netherlands,Estonia,Italy' --fastest 50  --protocol ftp --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S git docker apparmor wget
-sudo pacman -S sysstat clamav curl 
-sudo pacman -S arch-audit nano htop ncdu
+# reflector --verbose --country 'France,Germany,Austria,Bulgaria,Denmark,Greece,Hungary,Russia,Sweden,Switzerland,UnitedKingdom,Poland,Netherlands,Estonia,Italy' --fastest 50  --protocol ftp --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+# sudo pacman -S git docker apparmor wget
+# sudo pacman -S sysstat clamav curl
+# sudo pacman -S arch-audit nano htop ncdu
 # sudo pacman -S libapache2-mod-evasive libapache2-mod-security2
 #
 # install Blackarch DO THIS FIRST!!!!!!
@@ -41,14 +40,14 @@ sudo pacman -S arch-audit nano htop ncdu
 # git clone https://github.com/CISOfy/lynis
 # when running  cd lynis  then  ./lynis audit system
 #
-curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+sudp apt install git docker apparmor wget clamav curl nano htop ncdu libapache2-mod-evasive libapache2-mod-security2 python3-pip
 chmod +x get-pip.py
 python get-pip.py
 #
 # tecmint monitor
-# wget https://tecmint.com/wp-content/scripts/tecmint_monitor.sh
-# chmod 755 tecmint_monitor.sh
-# ./tecmint_monitor.sh -i
+wget https://tecmint.com/wp-content/scripts/tecmint_monitor.sh
+chmod 755 tecmint_monitor.sh
+./tecmint_monitor.sh -i
 #
 # INSTALL SECURITY REQUIREMENTS to harden up base server
 # Lynis already installed in Archlinux but not latest update => lynis audit system
@@ -56,15 +55,15 @@ sudo apparmor_status > apparmor.txt # look at this after install
 # Apparmor logs to /var/log/syslog
 # dmseg | grep -i 'apparmor.*denied' /var/log/syslog > apparmor_denied # use this to truncate syslog
 # RAT detection
-sudo pacman -S chkrootkit
+sudo apt install chkrootkit
 chkrootkit > rtest.txt
 cat rtest.txt | grep found > rootkit.txt
 # arch audit
-arch-audit > aaudit.txt
+# arch-audit > aaudit.txt
 # artillery honeypot
-# sudo git clone https://github.com/BinaryDefense/artillery/ artillery/
-# cd artillery
-# python3 setup.py # answer Yes to all three questions
+sudo git clone https://github.com/BinaryDefense/artillery/ artillery/
+cd artillery
+python3 setup.py # answer Yes to all three questions
 # configure Artillery as below
 # nano /var/artillery/config
 # change MONITOR_FOLDERS=”/var/www”,”/etc”,"/etc/passwd","/etc/shadow","/root"  for folders to be monitored
@@ -95,7 +94,7 @@ sudo update-rc.d postfix disable # to restart at boot sudo update-rc.d postfix e
 # iptables
 sudo systemctl start iptables.service
 # install UFW and configure https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04
-sudo pacman -S ufw
+sudo apt install ufw
 systemctl enable ufw
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
@@ -108,12 +107,12 @@ sudo ufw enable
 # run sudo ufw status verbose to check ufw is running after install
 # sudo ufw reset
 # fail2ban https://www.howtogeek.com/675010/how-to-secure-your-linux-computer-with-fail2ban/
-# sudo pacman -S fail2ban
+sudo apt install fail2ban
 # sudo pacman -S -Syu
-# sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
-# sudo nano /etc/fail2ban/jail.local and edit according to instructions in howtogeek.com above
-# sudo systemctl enable fail2ban
-# sudo systemctl restart fail2ban
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local and edit according to instructions in howtogeek.com above
+sudo systemctl enable fail2ban
+sudo systemctl restart fail2ban
 # test according to instructions in howtogeek.com above
 # ssh key exchange rather than password at a later date ??
 # END OF BASE and Security Install, contnued from baseinst31.sh
@@ -162,8 +161,8 @@ echo " "
 echo " Look at apparmor.txt and /var/log/syslog to confirm in complain mode."
 echo " "
 echo " Run sudo ufw status verbose to check ufw is running after install. "
-# echo " "
-# echo " Edit /var/artillery/config and change to your liking. "
+echo " "
+echo " Edit /var/artillery/config and change to your liking. "
 echo " "
 echo " Test fail2ban is running after tweaking jail.local. "
 echo " "
