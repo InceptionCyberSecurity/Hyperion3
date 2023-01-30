@@ -19,7 +19,7 @@ back.sh - tests for ShellShock and HeartBleed issues as well as testing VNC and 
 # Firewall
 firewall.sh - firewall fingerprinting and WAF detection using nmap and WAFWoof.
 fw1.sh - firewall bypass test and firewall rules detection using nmap.
-
+ 
 # Servers
 cloud.sh - uses nmap to test any cloud server.
 db.sh -  test any database server for vulnerabilities via nmap. (See webapp.sh for SQLmap tests)
