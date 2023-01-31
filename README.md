@@ -5,7 +5,7 @@ ins31.sh is the install script but edit to suit your preferences. test.sh is a s
 
 # Usage
 * Most scripts take two command line arguments, the IP address or domain name, and directory to store reports.
-* For example ./osint mysite.com mydirectory. See READMEscripts.md for details of command line arguments.
+* For example ./server mysite.com mydirectory. See READMEscripts.md for details of command line arguments.
 * Reports are in a custom directory which is displayed at command prompt after completion.
 
 # Hyperion v3.1 Scripts
@@ -19,7 +19,7 @@ back.sh - tests for ShellShock and HeartBleed issues as well as testing VNC and 
 # Firewall
 firewall.sh - firewall fingerprinting and WAF detection using nmap and WAFWoof.
 fw1.sh - firewall bypass test and firewall rules detection using nmap.
- 
+
 # Servers
 cloud.sh - uses nmap to test any cloud server.
 db.sh -  test any database server for vulnerabilities via nmap. (See webapp.sh for SQLmap tests)
