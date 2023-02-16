@@ -4,11 +4,9 @@
 #                              /__)_   '_/(  _ _
 #                             / ( (//)/(/__)( (//)
 #                                  /
-#
-# Author : Shankar Damodaran modified by ducatinat (nathan.jones@arcadeusops.com)
+# Author : Shankar Damodaran modified by ducatinat nathan.jones@arcadeusops.com
 # Usage	 : ./rapidscan.py example.com (or) python rapidsan.py example.com
-# This scanner automates the process of security scanning by using a
-# multitude of available Linux security tools and some custom scripts.
+# This scanner automates the process of security scanning by using a multitude of available Linux security tools and some custom scripts.
 #
 # Importing the libraries
 import sys
