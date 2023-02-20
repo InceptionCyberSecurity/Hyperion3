@@ -48,3 +48,4 @@ we.sh
 iker.py
 pyflooder.py
 rapidscan.py
+pythonscan.sh

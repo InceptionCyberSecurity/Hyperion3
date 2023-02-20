@@ -12,6 +12,9 @@ test.sh is a short script to confirm all is working ok.
 
 # Hyperion v3.1 Scripts
 
+# Python port scanner
+pythonscan.sh follow on screen prompts
+
 # Vulnerabilities
 exploit.sh - nmap and searchsploit (exploitdb) for exploit discovery.
 le.sh - Linux exploit suggester.
