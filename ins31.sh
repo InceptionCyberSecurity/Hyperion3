@@ -3,19 +3,18 @@
 # otgherise Ubuntu .
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 # sudo pacman -S docker   sudo systemctl status docker    sudo docker version    sudo systemctl stop docker
-#
 export LC_ALL="en_US.UTF-8"
 cd /
 cd root
 echo " Welcome to the Hyperion v3.1 Base Installation Script. "
 echo " This script will install all base requirements and pre-harden up the base server. "
-echo " "
+echo " Adise to read the comment in install.sh and decide if you want everything installed "
+echo " Uncomment any app you do not wish installed, such as fail2ban. "
+echo " Ctrl + C to abort. If not installation will automatically proceed in 25 seconds ....... "
 # echo " IMPORTANT: Add multilib repos to /etc/pacman.conf before you start and "
 # echo " install ArchLinux and BlackArch before you proceed. Happy Hacking!"
-echo " "
-sleep 10
-echo " "
-#
+sleep 25
+clear
 # INSTALL BASE REQUITREMENTS
 # install archlinux, include blackarch repos then follow https://www.blackarch.org/downloads.html and add multilib /etc/pacman.conf
 # https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib     DO THIS !!
@@ -28,7 +27,6 @@ echo " "
 # sudo pacman -S sysstat clamav curl
 # sudo pacman -S arch-audit nano htop ncdu
 # sudo pacman -S libapache2-mod-evasive libapache2-mod-security2
-#
 # install Blackarch DO THIS FIRST!!!!!!
 # curl -O https://blackarch.org/strap.sh
 # echo 8bfe5a569ba7d3b055077a4e5ceada94119cccef strap.sh | sha1sum -c
@@ -39,16 +37,13 @@ echo " "
 # update lynis
 # git clone https://github.com/CISOfy/lynis
 # when running  cd lynis  then  ./lynis audit system
-#
 sudp apt install git docker apparmor wget clamav curl nano htop ncdu libapache2-mod-evasive libapache2-mod-security2 python3-pip
 chmod +x get-pip.py
 python get-pip.py
-#
 # tecmint monitor
 wget https://tecmint.com/wp-content/scripts/tecmint_monitor.sh
 chmod 755 tecmint_monitor.sh
 ./tecmint_monitor.sh -i
-#
 # INSTALL SECURITY REQUIREMENTS to harden up base server
 # Lynis already installed in Archlinux but not latest update => lynis audit system
 sudo apparmor_status > apparmor.txt # look at this after install
@@ -90,7 +85,6 @@ sudo systemctl disable apache2 && sudo systemctl stop apache2
 sudo systemctl stop postfix
 # prevent postfix from booting https://duckduckgo.com/?q=prevent+postfix+from+starting+at+boot&t=newext&atb=v268-1&ia=web
 sudo update-rc.d postfix disable # to restart at boot sudo update-rc.d postfix enable. logs in /var/logs/mod_evasive
-#
 # iptables
 sudo systemctl start iptables.service
 # install UFW and configure https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04
@@ -116,7 +110,6 @@ sudo systemctl restart fail2ban
 # test according to instructions in howtogeek.com above
 # ssh key exchange rather than password at a later date ??
 # END OF BASE and Security Install, contnued from baseinst31.sh
-#
 # VULNERABILITY REQUIREMENTS
 git clone https://github.com/1N3/BlackWidow.git
 cd BlackWidow
@@ -129,7 +122,6 @@ cd root
 # USAGE zap-cli quick-scan --self-contained --spider -r -s xss http://127.0.0.1/
 # Need API key ???
 pip install --upgrade zapcli
-#
 # spiderfoot OSINT
 git clone https://github.com/smicallef/spiderfoot.git
 cd spiderfoot
@@ -145,7 +137,6 @@ git clone https://github.com/1N3/Sn1per
 cd Sn1per
 sudo ./install.sh
 cd ..
-#
 echo "Hyperion 3.1 system installation is complete. Updating all ... "
 sleep 5
 sudo nmap --script-update
