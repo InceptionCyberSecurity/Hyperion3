@@ -77,7 +77,7 @@ DNS Servers --script dns* or finalrecon. Possibly add dedicated OSINT script.
 Buffer Overflow nmap exploit script for Windows Server/IIS  eg  https://exploit.kitploit.com/2017/04/ms-iis-60-buffer-overflow-nse-script.html
 Keylogger detection eg https://thegeekpage.com/detect-keylogger-rat/
 Remote Access Trojan RAT detection eg https://redcanary.com/blog/detecting-remote-access-trojan/ and https://github.com/nict-csl/NanoCoreRAT-Analysis
-Include OSINT scripts ??
+Include OSINT scripts
 
 # Server Setup
 SSH private key exchange rather than public key/password logon
