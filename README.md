@@ -84,3 +84,9 @@ SSH private key exchange rather than public key/password logon
 
 # UPDATES
 Lynis see https://docs.nextcloudpi.com/en/how-to-update-lynis/
+
+# Bugs
+Send issues to info@arcadeusops.com stating nature of issue. A screenshot will help too. Thanks.
+
+# CPD
+Part of EC-Council ECE/CPD Credits
