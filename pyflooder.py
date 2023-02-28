@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Authors : D4Vinci
 # Recoded by : DucatiNat and codex31. Moved from python2 to python3. All copyrights to Squnity team

@@ -18,7 +18,6 @@
 ### * enumerate valid client/group IDs in aggressive mode
 ### * analyse results to extract actual issues
 ### * support 2 output formats
-###
 ### # Usage: python3 iker.py -i ips.txt -o iker_output.txt -x iker_output.xml -v
 ### Use -h option to complete help.
 ### Author: Julio Gomez Ortega (JGO@portcullis-security.com)
