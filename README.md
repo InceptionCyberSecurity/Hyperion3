@@ -1,4 +1,4 @@
-# Hyperion v3.1 For Archlinux/Blackarch or Kali. Can be used in Ubuntu with changes given in Comments.
+# Hyperion v3.1 For Archlinux/Blackarch or Kali (recommended). Can be used in Ubuntu with changes given in Comments.
 Install ArchLinux, then convert to BlackArch, see https://www.blackarch.org/downloads.html, or use Kali Linux in VirtualBox. <br/>
 Backend scripts used to drive results-based automated IT Security system for arcadeusops.com. Written in Bash and Python3. <br/>
 Written by Nathan Jones nathan.jones@arcadeusops.com <br/>
@@ -11,7 +11,7 @@ test.sh is a short script to confirm all is working ok. <br/>
 * For example ./server mysite.com mydirectory. See READMEscripts.md for details of command line arguments. <br/>
 * Reports are in a custom directory which is displayed at command prompt after completion. <br/>
 
-# Hyperion v3.1 Scripts 
+# Hyperion v3.1 Scripts
 
 # Python port scanner
 pythonscan.sh follow on screen prompts
