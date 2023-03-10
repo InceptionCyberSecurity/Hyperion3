@@ -1,5 +1,5 @@
 #!/bin/bash
-# Hyperion v3.x by ducatinat nathan.jones@arcadeusops.com; ArchLinux/Blackarch Germany server where appropriate
+# Hyperion v3.x by ducatinat nathan.jones@arcadeusops.com; Kali/ArchLinux/Blackarch Germany server where appropriate
 # otgherise Ubuntu .
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 # sudo pacman -S docker   sudo systemctl status docker    sudo docker version    sudo systemctl stop docker
