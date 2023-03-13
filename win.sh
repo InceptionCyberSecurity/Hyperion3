@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script for Hyperion v3.x that performs NetBIOS, SMB, USer Accounts, and backdoor tests on Windows servers
-# Usage ./win.sh 8.8.8.8 mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8. 
+# Usage ./win.sh 8.8.8.8 mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
 # First argument $1: $usIP user IP
 # second argument $2 mydir
 # User Input from  command line arguments

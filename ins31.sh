@@ -155,6 +155,6 @@ echo " "
 # echo " Test fail2ban is running after tweaking jail.local. "
 # echo " "
 echo " Copy Hyperion v3.1 scripts from HyperionV31 Github repo to "
-echo " /root, then chmod +x *.sh, chmod +x *.py. Happy hacking! Rebooting now ....... " 
+echo " /root, then chmod +x *.sh, chmod +x *.py. Happy hacking! Rebooting now ....... "
 sleep 5
 sudo reboot
