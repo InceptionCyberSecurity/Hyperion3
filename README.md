@@ -23,7 +23,7 @@ we.sh - Windows exploit suggester. <br/>
 back.sh - tests for ShellShock and HeartBleed issues as well as testing VNC and CITRX setups for backdoors/malware. <br/>
 
 # Run All
-runall.sh - customise what scripts you wany by running this single command line input. In development. <br/>
+runall.sh - customise what scripts you want by running this single command line input. In development. <br/>
 
 # Firewall
 firewall.sh - firewall fingerprinting and WAF detection using nmap and WAFWoof. <br/>
@@ -81,7 +81,6 @@ DNS Servers --script dns* or finalrecon. Possibly add dedicated OSINT script <br
 Buffer Overflow nmap exploit script for Windows Server/IIS  eg  https://exploit.kitploit.com/2017/04/ms-iis-60-buffer-overflow-nse-script.html <br/>
 Keylogger detection eg https://thegeekpage.com/detect-keylogger-rat/ <br/>
 Remote Access Trojan RAT detection eg https://redcanary.com/blog/detecting-remote-access-trojan/ and https://github.com/nict-csl/NanoCoreRAT-Analysis <br/>
-Include OSINT scripts <br/>
 
 # Server Setup
 SSH private key exchange rather than public key/password logon
