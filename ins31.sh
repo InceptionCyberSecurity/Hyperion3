@@ -139,6 +139,7 @@ echo " "
 sudo nmap --script-update
 sudo nmap --script-updatedb
 # sudo pacman -Syu
+clear
 echo " "
 echo " Hyperion v3.1 full installation and server hardening has completed. Server is now ready to reboot. "
 echo " Run Lynis audit report after full installation (lynis audit system). Lynis report in /var/log/lynis-report.log. Do what Lynis suggests!"
