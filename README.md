@@ -74,13 +74,8 @@ Copyright (c) ArcadeusOPS
 
 # TODO Future Test Scripts in Bash, Python, Lua or C++
 simlink attacks https://www.anvilventures.com/blog/defeating-secure-boot-with-symlink-attacks.html <br/>
-VPS tests https://blog.eldernode.com/how-to-test-security-of-vps/ and https://www.anvilventures.com/blog/defeating-secure-boot-with-symlink-attacks.html <br/>
-APIs eg Shodan https://nmap.org/nsedoc/scripts/shodan-api.html <br/>
 Vulnerability Analysis using Nessus and OpenVAS via command line <br/>
-DNS Servers --script dns* or finalrecon. Possibly add dedicated OSINT script <br/>
-Buffer Overflow nmap exploit script for Windows Server/IIS  eg  https://exploit.kitploit.com/2017/04/ms-iis-60-buffer-overflow-nse-script.html <br/>
 Keylogger detection eg https://thegeekpage.com/detect-keylogger-rat/ <br/>
-Remote Access Trojan RAT detection eg https://redcanary.com/blog/detecting-remote-access-trojan/ and https://github.com/nict-csl/NanoCoreRAT-Analysis <br/>
 
 # Server Setup
 SSH private key exchange rather than public key/password logon
