@@ -3,10 +3,10 @@
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 # sudo pacman -S docker   sudo systemctl status docker    sudo docker version    sudo systemctl stop docker
 export LC_ALL="en_US.UTF-8"
-cd /
-cd root
 echo " Welcome to the Hyperion v3.1 Base Installation Script. This script will install all base requirements and pre-harden up the base server. "
 echo " Read the comments in install.sh and decide if you want everything installed. Uncomment any app you do not wish installed, such as fail2ban. "
+echo " "
+echo " Install to a Directory of your choice. Use SUDO privaleges. "
 echo " Ctrl + C to abort. If not installation will automatically proceed ....... "
 # echo " IMPORTANT: Add multilib repos to /etc/pacman.conf before you start and "
 # echo " install ArchLinux and BlackArch before you proceed. Happy Hacking!"
@@ -111,8 +111,7 @@ cat rtest.txt | grep found > rootkit.txt
 git clone https://github.com/1N3/BlackWidow.git
 cd BlackWidow
 sudo bash install.sh
-cd /
-cd root
+cd ..
 # THIS IS FOR OWASP ZAP headless
 # OWASP ZAP command line https://www.zaproxy.org/docs/desktop/cmdline/
 # zap-cli https://github.com/Grunny/zap-cli to setup $PATH and configure
