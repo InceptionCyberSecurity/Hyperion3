@@ -1,19 +1,16 @@
 #!/bin/bash
-# Hyperion v3.x by ducatinat nathan.jones@arcadeusops.com; Kali/ArchLinux/Blackarch Germany server where appropriate
-# otgherise Ubuntu .
+# Hyperion v3.x by ducatinat nathan.jones@arcadeusops.com; Kali/ArchLinux/Blackarch server where appropriate, otherise Ubuntu
 # Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 # sudo pacman -S docker   sudo systemctl status docker    sudo docker version    sudo systemctl stop docker
 export LC_ALL="en_US.UTF-8"
 cd /
 cd root
-echo " Welcome to the Hyperion v3.1 Base Installation Script. "
-echo " This script will install all base requirements and pre-harden up the base server. "
-echo " Adise to read the comment in install.sh and decide if you want everything installed "
-echo " Uncomment any app you do not wish installed, such as fail2ban. "
-echo " Ctrl + C to abort. If not installation will automatically proceed in 25 seconds ....... "
+echo " Welcome to the Hyperion v3.1 Base Installation Script. This script will install all base requirements and pre-harden up the base server. "
+echo " Read the comments in install.sh and decide if you want everything installed. Uncomment any app you do not wish installed, such as fail2ban. "
+echo " Ctrl + C to abort. If not installation will automatically proceed within 15 seconds ....... "
 # echo " IMPORTANT: Add multilib repos to /etc/pacman.conf before you start and "
 # echo " install ArchLinux and BlackArch before you proceed. Happy Hacking!"
-sleep 25
+sleep 15
 clear
 # INSTALL BASE REQUITREMENTS
 # install archlinux, include blackarch repos then follow https://www.blackarch.org/downloads.html and add multilib /etc/pacman.conf
@@ -41,9 +38,9 @@ sudp apt install git docker apparmor wget clamav curl nano htop ncdu libapache2-
 chmod +x get-pip.py
 python get-pip.py
 # tecmint monitor
-wget https://tecmint.com/wp-content/scripts/tecmint_monitor.sh
-chmod 755 tecmint_monitor.sh
-./tecmint_monitor.sh -i
+# wget https://tecmint.com/wp-content/scripts/tecmint_monitor.sh
+# chmod 755 tecmint_monitor.sh
+# ./tecmint_monitor.sh -i
 # INSTALL SECURITY REQUIREMENTS to harden up base server
 # Lynis already installed in Archlinux but not latest update => lynis audit system
 sudo apparmor_status > apparmor.txt # look at this after install
@@ -56,9 +53,9 @@ cat rtest.txt | grep found > rootkit.txt
 # arch audit
 # arch-audit > aaudit.txt
 # artillery honeypot
-sudo git clone https://github.com/BinaryDefense/artillery/ artillery/
-cd artillery
-python3 setup.py # answer Yes to all three questions
+# sudo git clone https://github.com/BinaryDefense/artillery/ artillery/
+# cd artillery
+# python3 setup.py # answer Yes to all three questions
 # configure Artillery as below
 # nano /var/artillery/config
 # change MONITOR_FOLDERS=”/var/www”,”/etc”,"/etc/passwd","/etc/shadow","/root"  for folders to be monitored
@@ -72,9 +69,9 @@ python3 setup.py # answer Yes to all three questions
 # python restart_server.py
 # to reset baned IP    cd /var/artilley  and run  ./reset-bans.py xxx.xxx.xxx.xxx
 # ClamAV malware scanner https://ourcodeworld.com/articles/read/885/how-to-install-clamav-and-scan-for-viruses-with-the-command-line-cli-in-ubuntu-16-04
-sudo systemctl stop clamav-freshclam
-sudo freshclam
-sudo systemctl start clamav-freshclam
+# sudo systemctl stop clamav-freshclam
+# sudo freshclam
+# sudo systemctl start clamav-freshclam
 # sudo clamscan -i --detect-pua=yes -r / # manual scan
 # configure then stop apache2 select No configuration or Local only for mail
 # sudo nano /etc/apache2/mods-enabled/evasive.conf the follow https://phoenixnap.com/kb/apache-mod-evasive
@@ -88,25 +85,25 @@ sudo update-rc.d postfix disable # to restart at boot sudo update-rc.d postfix e
 # iptables
 sudo systemctl start iptables.service
 # install UFW and configure https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04
-sudo apt install ufw
-systemctl enable ufw
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
+# sudo apt install ufw
+# systemctl enable ufw
+# sudo ufw default deny incoming
+# sudo ufw default allow outgoing
 # sudo ufw allow https # for API from front end
 # sudo ufw allow 443 # for API from front end
-sudo ufw allow ssh
+# sudo ufw allow ssh
 # sudo ufw allow 1965 # CHANGE TO UNUSUAL SSH PORT for added security
 # sudo ufw allow from xxx.xxx.xxx.xx USE FOR VPN ACCESS ONLY
-sudo ufw enable
+# sudo ufw enable
 # run sudo ufw status verbose to check ufw is running after install
 # sudo ufw reset
 # fail2ban https://www.howtogeek.com/675010/how-to-secure-your-linux-computer-with-fail2ban/
-sudo apt install fail2ban
+# sudo apt install fail2ban
 # sudo pacman -S -Syu
-sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
-sudo nano /etc/fail2ban/jail.local and edit according to instructions in howtogeek.com above
-sudo systemctl enable fail2ban
-sudo systemctl restart fail2ban
+# sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+# sudo nano /etc/fail2ban/jail.local and edit according to instructions in howtogeek.com above
+# sudo systemctl enable fail2ban
+# sudo systemctl restart fail2ban
 # test according to instructions in howtogeek.com above
 # ssh key exchange rather than password at a later date ??
 # END OF BASE and Security Install, contnued from baseinst31.sh
@@ -123,10 +120,10 @@ cd root
 # Need API key ???
 pip install --upgrade zapcli
 # spiderfoot OSINT
-git clone https://github.com/smicallef/spiderfoot.git
-cd spiderfoot
-pip3 install -r requirements.txt
-cd ..
+# git clone https://github.com/smicallef/spiderfoot.git
+# cd spiderfoot
+# pip3 install -r requirements.txt
+# cd ..
 # reconFTW https://github.com/six2dez/reconftw#a-in-your-pcvpsvm ./reconftw.sh -d target.com -a -o /root/RFTW
 git clone https://github.com/six2dez/reconftw
 cd reconftw/
@@ -151,14 +148,13 @@ echo " Lynis report in /var/log/lynis-report.log. Do what Lynis suggests!"
 echo " "
 echo " Look at apparmor.txt and /var/log/syslog to confirm in complain mode."
 echo " "
-echo " Run sudo ufw status verbose to check ufw is running after install. "
-echo " "
-echo " Edit /var/artillery/config and change to your liking. "
-echo " "
-echo " Test fail2ban is running after tweaking jail.local. "
-echo " "
-echo " Copy Hyperion v3.1 scripts from JanusTests/HyperionV31 Github repo to "
-echo " /root, then chmod +x *.sh, chmod +x *.py. Happy hacking! "
-echo " "
-read -p "See /root/todo.txt for above steps. Press enter to reboot the server. "
+# echo " Run sudo ufw status verbose to check ufw is running after install. "
+# echo " "
+# echo " Edit /var/artillery/config and change to your liking. "
+# echo " "
+# echo " Test fail2ban is running after tweaking jail.local. "
+# echo " "
+echo " Copy Hyperion v3.1 scripts from HyperionV31 Github repo to "
+echo " /root, then chmod +x *.sh, chmod +x *.py. Happy hacking! Rebooting now ....... " 
+sleep 5
 sudo reboot
