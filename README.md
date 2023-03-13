@@ -8,7 +8,7 @@ test.sh is a short script to confirm all is working ok. <br/>
 
 # Usage
 * Most scripts take two command line arguments, the IP address or domain name, and directory to store reports. <br/>
-* For example ./server mysite.com mydirectory. See READMEscripts.md for details of command line arguments. <br/>
+* For example ./server mysite.com mystuff. See READMEscripts.md for details of command line arguments. <br/>
 * Reports are in a custom directory which is displayed at command prompt after completion. <br/>
 
 # Hyperion v3.1 Scripts
