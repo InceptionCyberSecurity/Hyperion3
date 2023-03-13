@@ -7,7 +7,7 @@ cd /
 cd root
 echo " Welcome to the Hyperion v3.1 Base Installation Script. This script will install all base requirements and pre-harden up the base server. "
 echo " Read the comments in install.sh and decide if you want everything installed. Uncomment any app you do not wish installed, such as fail2ban. "
-echo " Ctrl + C to abort. If not installation will automatically proceed within 15 seconds ....... "
+echo " Ctrl + C to abort. If not installation will automatically proceed ....... "
 # echo " IMPORTANT: Add multilib repos to /etc/pacman.conf before you start and "
 # echo " install ArchLinux and BlackArch before you proceed. Happy Hacking!"
 sleep 15
@@ -76,14 +76,14 @@ cat rtest.txt | grep found > rootkit.txt
 # configure then stop apache2 select No configuration or Local only for mail
 # sudo nano /etc/apache2/mods-enabled/evasive.conf the follow https://phoenixnap.com/kb/apache-mod-evasive
 # /etc/apache2/mods-enabled/security2.conf follow https://www.linuxbabe.com/security/modsecurity-apache-debian-ubuntu
-sudo systemctl start apache2
-sudo a2enmod security2
-sudo systemctl disable apache2 && sudo systemctl stop apache2
-sudo systemctl stop postfix
+# sudo systemctl start apache2
+# sudo a2enmod security2
+# sudo systemctl disable apache2 && sudo systemctl stop apache2
+# sudo systemctl stop postfix
 # prevent postfix from booting https://duckduckgo.com/?q=prevent+postfix+from+starting+at+boot&t=newext&atb=v268-1&ia=web
-sudo update-rc.d postfix disable # to restart at boot sudo update-rc.d postfix enable. logs in /var/logs/mod_evasive
+#sudo update-rc.d postfix disable # to restart at boot sudo update-rc.d postfix enable. logs in /var/logs/mod_evasive
 # iptables
-sudo systemctl start iptables.service
+# sudo systemctl start iptables.service
 # install UFW and configure https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04
 # sudo apt install ufw
 # systemctl enable ufw
@@ -135,26 +135,18 @@ cd Sn1per
 sudo ./install.sh
 cd ..
 echo "Hyperion 3.1 system installation is complete. Updating all ... "
-sleep 5
+echo " "
 sudo nmap --script-update
 sudo nmap --script-updatedb
-sudo pacman -Syu
-echo ""
-echo " Hyperion v3.1 full installation and server hardening has completed. "
-echo " Server is now ready to reboot. Before completing install you need to :- "
+# sudo pacman -Syu
 echo " "
-echo " Run Lynis audit report after full installation (lynis audit system). "
-echo " Lynis report in /var/log/lynis-report.log. Do what Lynis suggests!"
-echo " "
-echo " Look at apparmor.txt and /var/log/syslog to confirm in complain mode."
+echo " Hyperion v3.1 full installation and server hardening has completed. Server is now ready to reboot. "
+echo " Run Lynis audit report after full installation (lynis audit system). Lynis report in /var/log/lynis-report.log. Do what Lynis suggests!"
+echo " Look at apparmor.txt and /var/log/syslog to confirm in complain mode. Copy Hyperion v3.1 scripts from HyperionV31 Github repo to /root."
 echo " "
 # echo " Run sudo ufw status verbose to check ufw is running after install. "
-# echo " "
 # echo " Edit /var/artillery/config and change to your liking. "
-# echo " "
-# echo " Test fail2ban is running after tweaking jail.local. "
-# echo " "
-echo " Copy Hyperion v3.1 scripts from HyperionV31 Github repo to "
+# echo " Test fail2ban is running after tweaking jail.local. ""
 echo " /root, then chmod +x *.sh, chmod +x *.py. Happy hacking! Rebooting now ....... "
-sleep 5
+sleep 20
 sudo reboot
