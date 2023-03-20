@@ -14,13 +14,8 @@ sudo nmap -sV --version-light --script ssl-poodle -p 443 $userIP -oX po.xml
 xsltproc po.xml -o poodle.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/drown.html /root/$udir/drown.html
-mv /root/poodle.html /root/$udir/poodle.html
+mv drown.html /$udir/drown.html
+mv poodle.html /$udir/poodle.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

@@ -16,13 +16,8 @@ sudo nmap -p - --script ms-sql-info --script mysql-databases --script ms-sql-que
 xslproc us.xml -o nmapdb.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/unmapdb.html /root/$udir/unmapdb.html
-mv /root/nmapdb.html /root/$udir/nmapdb.html
+mv unmapdb.html /$udir/unmapdb.html
+mv nmapdb.html /$udir/nmapdb.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

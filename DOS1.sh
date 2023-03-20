@@ -13,12 +13,7 @@ sudo nmap -vv $userIP --script dos* -p - -oX dos.xml
 xsltproc dos.xml -o dos1.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/dos1.html /root/$udir/dos1.html
+mv dos1.html /$udir/dos1.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root
