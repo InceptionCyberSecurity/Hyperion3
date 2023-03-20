@@ -58,21 +58,17 @@ sed -i "1i IKE-SCAN Fake ID Brute Force Results\n ------------------------------
 cat ik.txt uvpn1.txt > outputvpnall.txt
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/outputvpnall.txt /root/$udir/outputvpnall.txt
-mv /root/uservpnall.html /root/$udir/uservpnall.html
-mv /root/UNmapvpn.html /root/$udir/UNmapvpn.html
-mv /root/pptp.html /root/$udir/pptp.html
-mv /root/UrNmapVPN.html /root/$udir/UrNmamVPN.html
-mv /root/vpncheck.html /root/$udir/vpncheck.html
-mv /root/ciscoasa.html /root/$udir/ciscoasa.html
-mv /root/ciscoany.html /root/$udir/ciscoany.html
-mv /root/pulse.html /root/$udir/pulse.html
-mv /root/fake.txt /root/$udir/fake.txt
+
+mv outputvpnall.txt /$udir/outputvpnall.txt
+mv uservpnall.html /$udir/uservpnall.html
+mv UNmapvpn.html /$udir/UNmapvpn.html
+mv pptp.html /$udir/pptp.html
+mv UrNmapVPN.html /$udir/UrNmamVPN.html
+mv vpncheck.html /$udir/vpncheck.html
+mv ciscoasa.html /$udir/ciscoasa.html
+mv ciscoany.html /$udir/ciscoany.html
+mv /pulse.html /$udir/pulse.html
+mv /fake.txt /$udir/fake.txt
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

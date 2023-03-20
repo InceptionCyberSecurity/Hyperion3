@@ -20,14 +20,9 @@ sudo nmap -vv sV --allports --version-all --version-trace $userIP -oX serv.xml
 xsltproc serv.xml -o services.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/usernmapServer.html /root/$udir/usernmapServer.html
-mv /root/os.html /root/$udir/os.html
-mv /root/services.html /root/$udir/services.html
+mv usernmapServer.html /$udir/usernmapServer.html
+mv os.html /$udir/os.html
+mv services.html /$udir/services.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

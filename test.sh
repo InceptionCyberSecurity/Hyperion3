@@ -13,9 +13,7 @@ sudo nmap -p - -sC $usIP -oX test.xml
 xsltproc test.xml -o test.html
 
 # local storage for upload to client container
-cd /
-cd /root
 mkdir $udir
-mv /root/test.html /root/$udir/test.html
+mv test.html /$udir/test.html
 rm /root/test.xml
 echo " The results are stored in directory /tmp/$udir "

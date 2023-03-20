@@ -12,12 +12,8 @@ perl ./uniscan.pl -u https://$userIP/ -qweds > uni.txt
 sed -i '1i LFI, RFI and RCE Detetcion from Janus Tests\n---------------------------------------' uniscan.txt
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
 cd $udir
-mv /root/uniscan.txt /root/$udir/uniscan.txt
+mv uniscan.txt /$udir/uniscan.txt
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

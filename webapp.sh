@@ -28,19 +28,13 @@ rm RS-Vulnerability-Report
 python rapidscan.py $userIP
 mv RS-Vulnerability-Report rapid.txt
 sed -i '1i RapidScan Comprehensive Scan Results Results\n------------------------------------------------' rapid.txt
-cd /
-cd root
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/usermapWebApp.html /root/$udir/usermapWebApp.html
-mv /root/sqli.txt /root/$udir/sqli.txt
-mv /root/ZAP.html /root/$udir/ZAP.html
-mv /root/rapid.txt /root/$udir/rapid.txt
+
+mv /usermapWebApp.html /$udir/usermapWebApp.html
+mv sqli.txt /$udir/sqli.txt
+mv ZAP.html /$udir/ZAP.html
+mv rapid.txt /$udir/rapid.txt
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

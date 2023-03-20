@@ -29,4 +29,4 @@ echo " "
 echo " Running Tecmint's Server Info Script. " # see https://www.tecmint.com/linux-server-health-monitoring-script/
 echo " "
 sleep 5
-monitor
+# monitor

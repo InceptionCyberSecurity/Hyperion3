@@ -15,12 +15,7 @@ windows-exploit-suggester --database 2021-06-10-mssb.xls --ostext ''$winos'' > w
 sed -i '1i Windows Exploit Code form Janus Tests\n---------------------------------------' wexploit.txt
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/wexploit.txt /root/$udir/wexploit.txt
+mv wexploit.txt /$udir/wexploit.txt
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

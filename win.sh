@@ -37,18 +37,13 @@ sudo nmap -vv $userIP --script vuln --script vulners -p - -oX vuln.xml
 xsltproc vuln.xml -o vuln.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/smb.html /root/$udir/smb.html
-mv /root/api.html /root/$udir/api.html
-mv /root/net.html /root/$udir/net.html
-mv /root/enum.html /root/$udir/enum.html
-mv /root/pulsar.html /root/$udir/pulsar.html
-mv /root/vuln.html /root/$udir/vuln.html
+mv smb.html /$udir/smb.html
+mv api.html /$udir/api.html
+mv net.html /$udir/net.html
+mv enum.html /$udir/enum.html
+mv pulsar.html /$udir/pulsar.html
+mv vuln.html /$udir/vuln.html
 #mv /root/rdp1.txt /root/$udir/rdp1.txt
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

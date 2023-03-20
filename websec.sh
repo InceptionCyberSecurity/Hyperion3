@@ -15,13 +15,8 @@ xslproc usernmap.xml -o usermapWebApp.html
 sudo golismero scan -i usernmap.xml -o gorep.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/usermapWebApp.html /root/$udir/usermapWebApp.html
-mv /root/gorep.html /root/$udir/gorep.html
+mv /usermapWebApp.html /$udir/usermapWebApp.html
+mv gorep.html /$udir/gorep.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

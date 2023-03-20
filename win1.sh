@@ -30,15 +30,10 @@ sudo nmap -vv $userIP --script vuln --script vulners -p - -oX usernmap2.xml
 xslproc usernmap2.xml -o usermapvulnWIN.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/unmapAD.html /root/$udir/unmapAD.html
-mv /root/usermapLDAP.html /root/$udir/usermapLDAP.html
-mv /root/umapLDAP1.html /root/$udir/umapLDAP1.html
-mv /root/usernmapvulnWIN.html /root/$udir/usernmapvulnWIN.html
+mv runmapAD.html /$udir/unmapAD.html
+mv usermapLDAP.html /$udir/usermapLDAP.html
+mv umapLDAP1.html /$udir/umapLDAP1.html
+mv usernmapvulnWIN.html /$udir/usernmapvulnWIN.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root
