@@ -21,14 +21,9 @@ sudo nmap -sS -Pn -p- -T4 -vv --reason -oX fwrules.xml $userIP
 xslproc fwrules.xml -o fwrules.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/waf2.txt /root/$udir/waf2.txt
-mv /root/waffy.html /root/$udir/waffy.html
-mv /root/fwrules.html /root/$udir/fwrules.html
+mv waf2.txt /$udir/waf2.txt
+mv waffy.html /$udir/waffy.html
+mv fwrules.html /$udir/fwrules.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

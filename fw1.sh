@@ -34,15 +34,10 @@ xsltproc frag.xml -o frag.html
 clear
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/usernmapfw.html /root/$udir/usernmapfw.html.txt
-mv /root/fwaudit.html /root/$udir/fwaudit.html
-mv /root/fin.html /root/$udir/fin.html
-mv /root/frag.html /root/$udir/frag.html
+mv usernmapfw.html /$udir/usernmapfw.html.txt
+mv fwaudit.html /$udir/fwaudit.html
+mv fin.html /$udir/fin.html
+mv frag.html /$udir/frag.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

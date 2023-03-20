@@ -23,14 +23,9 @@ sed -1 '1i SMTP Mail Server Output\n---------------------------' ismtp1.txt
 cd ..
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/usermapsmtpvul.html /root/$udir/usermapsmtpvul.html
-mv /root/usermapsmtp.html /root/$udir/usermapsmtp.html
-mv /root/smtp1.txt /root/$udir/smtp1.txt
+mv usermapsmtpvul.html /$udir/usermapsmtpvul.html
+mv usermapsmtp.html /$udir/usermapsmtp.html
+mv smtp1.txt /$udir/smtp1.txt
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

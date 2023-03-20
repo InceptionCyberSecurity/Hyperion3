@@ -14,12 +14,7 @@ sudo nmap -p 21, 22, 990, 989, $uport --script vulns --script vulners --script f
 xslproc ftp.xml -o ftp.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/ftp.html /root/$udir/ftp.html
+mv ftp.html /$udir/ftp.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

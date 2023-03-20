@@ -14,12 +14,7 @@ linux-exploit-suggester -k $ker > lexploit.txt
 sed -1 '1i Linux Exploit Code Available\n----------------------------------' lexploit.txt
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/lexploit.txt /root/$udir/lexploit.txt
+mv lexploit.txt /$udir/lexploit.txt
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

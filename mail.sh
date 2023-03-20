@@ -16,13 +16,9 @@ sudo nmap -vv -sV -sC -p - --script=pop3* $userIP -oX usernmap3.xml
 xslproc usernmap3.xml -o usernmapop3.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/usernmapp3vuln.html /root/$udir/usernmapp3vuln.html
-mv /root/usernmapop3.html /root/$udir/usernmapop3.html
+
+mv usernmapp3vuln.html /$udir/usernmapp3vuln.html
+mv usernmapop3.html /$udir/usernmapop3.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

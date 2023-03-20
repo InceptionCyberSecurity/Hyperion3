@@ -18,14 +18,10 @@ xsltproc mw.xml -o malwarehost.html
 sudo nmap -p445 --script smb-vuln-ms17-010 $userIP -oX eb.xml
 xsltproc eb.xml -o eternalblue.html
 
-cd /
-cd root
+# local storage
 mkdir $udir
-cd $udir
-mv /root/malware.html /root/$udir/malware.html
-mv /root/malwarehost.html /root/$udir/malwarehost.html
-mv /root/eternalblue.html /root/$udir/eternalblue.html
+mv malware.html /$udir/malware.html
+mv malwarehost.html /$udir/malwarehost.html
+mv eternalblue.html /$udir/eternalblue.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root
