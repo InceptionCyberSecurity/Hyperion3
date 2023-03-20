@@ -25,13 +25,8 @@ xsltproc what.xml > whatcms2.html
 cat waf.txt joom.txt > outputcms2.txt
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/outputcms2.txt /root/$udir/outputcms2.txt
-mv /root/whatcms2.html /root/$udir/whatcms2.html
+mv outputcms2.txt /$udir/outputcms2.txt
+mv whatcms2.html /$udir/whatcms2.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

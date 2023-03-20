@@ -40,15 +40,9 @@ sudo python2.7 ./rapidscan.py $userIP
 cat waf.txt rapid.txt > outputcms.txt
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/outputcms.txt /root/$udir/outputcms.txt
-mv /root/whatcms.html /root/$udir/whatcms.html
-mv /root/usermapCMSall.html /root/$udir/usermapCMSall.html
-mv /root/wapiti.html /root/$udir/wapiti.html
+mv outputcms.txt /root/$udir/outputcms.txt
+mv *.html /root/$udir/
+
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

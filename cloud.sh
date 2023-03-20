@@ -12,12 +12,7 @@ sudo nmap -vv $userIP --script vuln --script vulners --script discovery -p - -oX
 xslproc vuln.xml -o cloudvuln.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/cloudvuln.html /root/$udir/cloudvuln.html
+mv cloudvuln.html /$udir/cloudvuln.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

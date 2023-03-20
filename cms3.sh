@@ -41,13 +41,8 @@ xsltproc what.xml > whatcms3.html
 cat waf.txt enum1.txt exp1.tct droop.txt > outputcms3.txt
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/outputcms3.txt /root/$udir/outputcms3.txt
-mv /root/whatcms3.html /root/$udir/whatcms3.html
+mv outputcms3.txt /$udir/outputcms3.txt
+mv whatcms3.html /$udir/whatcms3.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

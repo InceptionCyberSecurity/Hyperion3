@@ -37,13 +37,8 @@ xsltproc what.xml > whatcms1.html
 cat waf.txt wp.txt wp1.txt wp2.txt wp3.txt > outputcms1.txt
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-cd $udir
-mv /root/outputcms1.txt /root/$udir/outputcms1.txt
-mv /root/whatcms1.html /root/$udir/whatcms1.html
+mv outputcms1.txt /$udir/outputcms1.txt
+mv whatcms1.html /$udir/whatcms1.html
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

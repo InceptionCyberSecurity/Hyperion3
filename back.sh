@@ -28,15 +28,7 @@ sudo nmap -vv -sU --script citrix* -p - $userIP -oX ctx.xml
 xsltproc ctx.xml -o citrix.html
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
-mv /root/shellshock.html /root/$udir/shellshock.html
-mv /root/shellshock1.html /root/$udir/shellshock1.html
-mv /root/heartbleed.html /root/$udir/heartbleed.html
-mv /root/vnc.html /root/$udir/vnc.html
-mv /root/citrix.html /root/$udir/citrix.html
+mv *.html /$udir
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root

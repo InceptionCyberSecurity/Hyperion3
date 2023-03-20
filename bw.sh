@@ -18,7 +18,6 @@ cd /
 cd /usr/share/blackwidow/${userIP}_${uport}
 cat *.txt > bw.txt
 sed -i '1i BlackWidow OWASP Top 10 Results\n----------------------------------' bw.txt
-mv bw.txt /root/bw.txt
 # blackwidow -u https://target.com - crawl target.com with 3 levels of depth.
 # blackwidow -d target.com -l 5 -v y - crawl the domain: target.com with 5 levels of depth with verbose logging enabled.
 # blackwidow -d target.com -l 5 -c 'test=test' - crawl the domain: target.com with 5 levels of depth using the cookie 'test=test'
@@ -27,12 +26,8 @@ mv bw.txt /root/bw.txt
 # cd ${userdom}_80
 
 # local storage ready for upload to client's container
-cd /
-cd root
 mkdir $udir
 cd $udir
-mv /root/bw.txt /root/$udir/bw.txt
+mv bw.txt /$udir/bw.txt
 echo " Your results are stored in directory $udir "
 sleep 10
-cd /
-cd root
