@@ -6,7 +6,9 @@
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8
 udir="$2" # directory for reports
-
+echo " "
+echo " The script is running and may take a while ............"
+echo " "
 # nmap vuln on firewall
 sudo nmap -vv -p - $userIP --script vuln --script vulners -p - -oX usernmap.xml
 xslproc usernmap.xml -o usermapfw.html

@@ -6,7 +6,9 @@
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8
 udir="$2" # directory for reports
-
+echo " "
+echo " The script is running and may take a while ............"
+echo " "
 # SMB OS discovery SMB signing check smb vulnerability scripts SMB brute force
 sudo nmap -p 139, 445 --script smb-os-discovery --script smb-security-mode --script smb-vuln-* --script smb-brute -–script-args userdb=common_pass.txt,passdb=common_users.txt $userIP -oX smb.xml
 xsltproc smb.xml -o smb.html

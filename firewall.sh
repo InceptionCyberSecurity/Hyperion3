@@ -6,7 +6,9 @@
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8
 udir="$2" # directory for reports
-
+echo " "
+echo " The script is running and may take a while ............"
+echo " "
 # WAF detect/fingerprint
 sudo nmap -p 80, 443 --script http-waf-detect --script=http-waf-fingerprint $userIP -oX waffy.xml
 xsltproc waffy.html -o waffy.html

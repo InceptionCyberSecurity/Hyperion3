@@ -6,7 +6,9 @@
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8
 udir="$2" # directory for reports
-
+echo " "
+echo " The script is running and may take a while ............"
+echo " "
 # convert IP short form
 # userIP=$(dig $usIP +short)
 # echo "Your IP address is: " $userIP # for testing only remove for headless operation

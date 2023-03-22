@@ -3,11 +3,12 @@
 # Usage ./DOS1.sh 8.8.8.8 mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
 # First argument $1: $usIP user IP
 # second argumnet $2 mydir
-
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8
 udir="$2" # directory for reports
-
+echo " "
+echo " The script is running and may take a while ............"
+echo " "
 # nmap dos
 sudo nmap -vv $userIP --script dos* -p - -oX dos.xml
 xsltproc dos.xml -o dos1.html

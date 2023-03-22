@@ -8,10 +8,10 @@
 userIP="$1" # IP address eg 8.8.8.8
 uport="$2" # target open port
 udir="$3" # directory for reports
-
+echo " "
+echo " The script is running and may take a while ............"
+echo " "
 # Blackwidow
-cd/
-cd root
 cd BlackWidow
 blackwidow -d $userIP -l 5 -s y -v y -p $uport
 cd /

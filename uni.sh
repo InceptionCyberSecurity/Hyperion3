@@ -1,4 +1,6 @@
-#!/bin/bash
+echo " "
+echo " The script is running and may take a while ............"
+echo " "#!/bin/bash
 # Script for Hyperion v3.x that performs Uniscan tests fri LFI RFI and RCE vulnerabilities
 # Usage ./uni.sh 8.8.8.8 mydir - as single command line argument but can use website instead of IP address eg google.com for 8.8.8.8.
 # First argument $1: $usIP user IP

@@ -6,10 +6,12 @@
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8
 udir="$2" # directory for reports
-
+echo " "
+echo " The script is running and may take a while ............"
+echo " "
 sudo sudo nmap -sV --script=sslv2-drown $userIP -oX dr.xml
 xsltproc dr.xml -o drown.html
-
+#
 sudo nmap -sV --version-light --script ssl-poodle -p 443 $userIP -oX po.xml
 xsltproc po.xml -o poodle.html
 

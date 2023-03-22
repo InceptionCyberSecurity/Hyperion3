@@ -7,7 +7,9 @@
 # User Input from  command line arguments
 ker="$1" # linux kernel number e.g 2.6.1 try uname -a
 udir="$2" # directory for reports
-
+echo " "
+echo " The script is running and may take a while ............"
+echo " "
 # linux exploit suggester
 linux-exploit-suggester -k $ker > lexploit.txt
 # cat le.txt | grep CVE les.txt

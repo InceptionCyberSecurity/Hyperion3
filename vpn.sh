@@ -8,7 +8,9 @@
 userIP="$1" # IP address eg 8.8.8.8
 userport="$2" # user search term
 udir="$3" # directory for reports
-
+echo " "
+echo " The script is running and may take a while ............"
+echo " "
 # iker.py to analyse the security of the key exchange phase in IPsec based VPNs
 python iker.py -v -o $userIP > ik.txt
 sed -i "1i IKE-Scan that checks for security flaws\n---------------------------------------" ik.txt
