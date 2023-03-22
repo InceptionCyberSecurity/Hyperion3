@@ -15,5 +15,5 @@ xsltproc test.xml -o test.html
 # local storage for upload to client container
 mkdir $udir
 mv test.html /$udir/test.html
-rm /root/test.xml
+rm test.xml
 echo " The results are stored in directory /tmp/$udir "
