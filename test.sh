@@ -10,7 +10,7 @@ udir="$2" # user directory
 
 # quick nmap port scan
 echo " "
-echo " This script test.sh is running ............"
+echo " The script is running and may take a while ............"
 echo " "
 sudo nmap -p - -sC $usIP -oX test.xml
 xsltproc test.xml -o test.html
