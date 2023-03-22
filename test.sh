@@ -9,6 +9,9 @@ usIP="$1" # IP address eg 8.8.8.8
 udir="$2" # user directory
 
 # quick nmap port scan
+echo " "
+echo " This script test.sh is running ............"
+echo " "
 sudo nmap -p - -sC $usIP -oX test.xml
 xsltproc test.xml -o test.html
 
