@@ -8,19 +8,15 @@ echo " "#!/bin/bash
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8
 udir="$2" # directory for reports
-
 # nmap vuln
 sudo nmap -vv $userIP --script vuln --script vulners -p - -oX usernmap.xml
 xslproc usernmap.xml -o usernmapServer.htm
-
 # OS detection
 sudo nmap -vv -O --osscan-guess --fuzzy $userIP -oX os.xml
 xsltproc os.xml -o os.html
-
 # servers, service detection
 sudo nmap -vv sV --allports --version-all --version-trace $userIP -oX serv.xml
 xsltproc serv.xml -o services.html
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv usernmapServer.html /$udir/usernmapServer.html

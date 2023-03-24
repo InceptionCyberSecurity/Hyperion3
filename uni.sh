@@ -8,11 +8,9 @@ echo " "#!/bin/bash
 # User Input from  command line arguments
 userIP="$1" # IP address eg 8.8.8.8
 udir="$2" # directory for reports
-
 # uniscan
 perl ./uniscan.pl -u https://$userIP/ -qweds > uni.txt
 sed -i '1i LFI, RFI and RCE Detetcion from Janus Tests\n---------------------------------------' uniscan.txt
-
 # local storage ready for upload to client's container
 mkdir $udir
 cd $udir

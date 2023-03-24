@@ -12,10 +12,8 @@ echo " "
 # nmap vuln
 sudo nmap -vv $userIP --script vuln --script vulners --script http* -p - -oX usernmap.xml
 xslproc usernmap.xml -o usermapWebApp.html
-
 # golismero grab Nmap results, scan host found and write an HTML report:
 sudo golismero scan -i usernmap.xml -o gorep.html
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv /usermapWebApp.html /$udir/usermapWebApp.html

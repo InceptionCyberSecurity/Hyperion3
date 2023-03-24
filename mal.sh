@@ -12,14 +12,11 @@ echo " "
 # malware category
 sudo nmap -v -sU -sT $userIP --script malware -p - -oX file.xml
 xsltproc file.xml -o malware.html
-
 # eternalblue WannaCry and Petya ransomware
 sudo nmap -sV --script=http-malware-host $userIP -oX mw.xml
 xsltproc mw.xml -o malwarehost.html
-
 sudo nmap -p445 --script smb-vuln-ms17-010 $userIP -oX eb.xml
 xsltproc eb.xml -o eternalblue.html
-
 # local storage
 mkdir $udir
 mv malware.html /$udir/malware.html
