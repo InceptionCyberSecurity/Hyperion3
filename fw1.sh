@@ -12,7 +12,6 @@ echo " "
 # nmap vuln on firewall
 sudo nmap -vv -p - $userIP --script vuln --script vulners -p - -oX usernmap.xml
 xslproc usernmap.xml -o usermapfw.html
-
 # are firewall filters and rules performing as intended? simple Nmap firewall audit
 sudo nmap –v -p - –sA –n $userIP –oX fwaudit.xml
 xsltproc fwaudit.xml -o fwaudit.html
@@ -25,16 +24,13 @@ xsltproc fwaudit.xml -o fwaudit.html
 # SYN scan, with the spoof source port number option (--source-port or abbreviated just to –g). By providing the port number, the network
 # mapper will send packets from that port where possible. The following example will run an FIN scan, which will use a spoofed source port
 # number of 25 (SMTP) and save the output to file firewallreport.txt. Now you can see if a particular port is allowing all traffic through:
-
 # FIN scan
 sudo nmap -p - –sF –g 25 $userIP -oX fin.xml
 xsltproc fin.xml -o fin.html
-
 # fragmented traffic bypass firewall
 sudo nmap –sS -p - --scan-delay 500 –f $userIP -oX frag.xml
 xsltproc frag.xml -o frag.html
 clear
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv usernmapfw.html /$udir/usernmapfw.html.txt

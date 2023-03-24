@@ -12,14 +12,11 @@ echo " "
 # nmap vuln
 sudo nmap -vv $userIP --script vuln --script vulners -p - -oX usernmap.xml
 xslproc usernmap.xml -o usernmapp3vuln.html
-
 # POP3
 sudo nmap -vv -sV -sC -p - --script=pop3* $userIP -oX usernmap3.xml
 xslproc usernmap3.xml -o usernmapop3.html
-
 # local storage ready for upload to client's container
 mkdir $udir
-
 mv usernmapp3vuln.html /$udir/usernmapp3vuln.html
 mv usernmapop3.html /$udir/usernmapop3.html
 echo " Your results are stored in directory $udir "

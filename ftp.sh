@@ -10,11 +10,9 @@ echo " "#!/bin/bash
 userIP="$1" # IP address eg 8.8.8.8
 uport="$2" # uport
 udir="$3" # directory for reports
-
 # all ftp
 sudo nmap -p 21, 22, 990, 989, $uport --script vulns --script vulners --script ftp* $userIP -oX ftp.xml
 xslproc ftp.xml -o ftp.html
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv ftp.html /$udir/ftp.html

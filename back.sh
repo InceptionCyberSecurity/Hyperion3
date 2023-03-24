@@ -12,23 +12,18 @@ echo " "
 # shellshock
 sudo nmap -vv -sV -p- --script http-shellshock $userIP -oX shell.xml
 xsltproc shell.xml -o shellshock.html
-
 # targeted shellshock
 sudo nmap -vv -sV -p- --script http-shellshock --script-args uri=/cgi-bin/bin,cmd=ls $userIP -oX shell1.xml
 xsltproc shell1.xml -o shellshock1.html
-
 # heartbleed
 sudo nmap -vv -p 443 --script ssl-heartbleed $userIP -oX hb.xml
 xsltproc hb.xml -o heartbleed.html
-
 # VNC
 sudo nmap -vv -sV -sC --script vnc* -p 5900 --script=vnc-title $userIP -oX v.xml
 xsltproc v.xml -o vnc.html
-
 # CITRIX
 sudo nmap -vv -sU --script citrix* -p - $userIP -oX ctx.xml
 xsltproc ctx.xml -o citrix.html
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv *.html /$udir

@@ -14,7 +14,6 @@ xsltproc dr.xml -o drown.html
 #
 sudo nmap -sV --version-light --script ssl-poodle -p 443 $userIP -oX po.xml
 xsltproc po.xml -o poodle.html
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv drown.html /$udir/drown.html

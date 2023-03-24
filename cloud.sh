@@ -12,7 +12,6 @@ echo " "
 # nmap vuln
 sudo nmap -vv $userIP --script vuln --script vulners --script discovery -p - -oX vuln.xml
 xslproc vuln.xml -o cloudvuln.html
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv cloudvuln.html /$udir/cloudvuln.html

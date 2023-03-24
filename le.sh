@@ -14,7 +14,6 @@ echo " "
 linux-exploit-suggester -k $ker > lexploit.txt
 # cat le.txt | grep CVE les.txt
 sed -1 '1i Linux Exploit Code Available\n----------------------------------' lexploit.txt
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv lexploit.txt /$udir/lexploit.txt

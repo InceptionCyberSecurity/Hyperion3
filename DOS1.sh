@@ -12,7 +12,6 @@ echo " "
 # nmap dos
 sudo nmap -vv $userIP --script dos* -p - -oX dos.xml
 xsltproc dos.xml -o dos1.html
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv dos1.html /$udir/dos1.html

@@ -24,7 +24,6 @@ sed -i '1i BlackWidow OWASP Top 10 Results\n----------------------------------' 
 # blackwidow -d target.com -l 5 -s y -v y - crawl the domain: target.com with 5 levels of depth and fuzz all unique parameters for OWASP vulnerabilities with verbose logging on.
 # injectx.py -u https://test.com/uers.php?user=1&admin=true -v y - Fuzz all GET parameters for common OWASP vulnerabilities with verbose logging enabled.
 # cd ${userdom}_80
-
 # local storage ready for upload to client's container
 mkdir $udir
 cd $udir

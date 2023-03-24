@@ -12,16 +12,13 @@ echo " "
 # WAF detect/fingerprint
 sudo nmap -p 80, 443 --script http-waf-detect --script=http-waf-fingerprint $userIP -oX waffy.xml
 xsltproc waffy.html -o waffy.html
-
 # WAFWoof web app firewall confirmation
 wafw00f $userIP > waf1.txt
 cat waf1.txt | grep WAF > waf2.txt
 sed -i '1i Web application Firewall Detection\n-------------------------------------' waf2.txt
-
 # test firewall rules
 sudo nmap -sS -Pn -p- -T4 -vv --reason -oX fwrules.xml $userIP
 xslproc fwrules.xml -o fwrules.html
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv waf2.txt /$udir/waf2.txt

@@ -13,19 +13,15 @@ echo " "
 wafw00f $userIP > w.txt
 cat w.txt | grep WAF > waf.txt
 sed -i '1i WafWoof Results\n----------------------' waf.txt
-
 # Joomla
 joomscan -u http://$userIP > j.txt
 catjr.txt | grep joomla > joom.txt
 sed -i '1i Joomla Scan Results\n---------------------' joom.txt
-
 # whatweb
 whatweb -v -a 4 -l --logxml=what.xml $userIP
 xsltproc what.xml > whatcms2.html
-
 # text file combine
 cat waf.txt joom.txt > outputcms2.txt
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv outputcms2.txt /$udir/outputcms2.txt

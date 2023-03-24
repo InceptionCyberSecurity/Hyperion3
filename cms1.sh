@@ -13,31 +13,24 @@ echo " "
 wafw00f $userIP > w.txt
 cat w.txt | grep WAF > waf.txt
 sed -i '1i WafWoof Results\n----------------------' waf.txt
-
 # Wordpress
 wpscan --url $userIP > p.txt
 cat p.txt | grep users > wp.txt
 sed -i '1i WPScan Results\n----------------------' wp.txt
-
 wpscan --url $userIP --enumerate u > w1.txt
 cat w1.txt | grep users > wp1.txt
 sed -i '1i WPScan Users Results Users\n------------------------------' wp1.txt
-
 wpscan --url $userIP --enumerate p > w2.txt
 cat w2.txt | grep plugins > wp2.txt
 sed -i '1i WPScan Plugins Results Plugins\n-----------------------------' wp2.txt
-
 wpscan --url $userIP --enumerate t > w3.txt
 cat w3.txt | grep theme > wp3.txt
 sed -i '1i WPScan Themes Results Themes\n----------------------------' wp3.txt
-
 # whatweb
 whatweb -v -a 4 -l --logxml=what.xml $userIP
 xsltproc what.xml > whatcms1.html
-
 # text file combine
 cat waf.txt wp.txt wp1.txt wp2.txt wp3.txt > outputcms1.txt
-
 # local storage ready for upload to client's container
 mkdir $udir
 mv outputcms1.txt /$udir/outputcms1.txt
