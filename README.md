@@ -21,7 +21,7 @@ we.sh - Windows exploit suggester. <br/>
 back.sh - tests for ShellShock and HeartBleed issues as well as testing VNC and CITRX setups for backdoors/malware. <br/>
 
 # Run All
-runall.sh - customise what scripts you want by running this single command line input. In development. <br/>
+runall.sh - customise what scripts you want by running this single command line input. incomplete; in development. <br/>
 
 # Firewall
 firewall.sh - firewall fingerprinting and WAF detection using nmap and WAFWoof. <br/>
