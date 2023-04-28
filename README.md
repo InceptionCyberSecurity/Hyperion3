@@ -65,8 +65,7 @@ websec.sh - Golismero web security scan. <br/>
 dr.sh - nmap scripts to test for SSL vulnerabilities of POODLE and DROWN. <br/>
 
 ## Ethical Notice
-The original code is written by ArcadeusOPS, who are not responsible for misuse of this data gathering tool. <br/>
-Do not use these scripts to navigate websites/devices that take part in any activity that is identified as illegal under the laws and regulations of your government. STAY LEGAL !!<br/>
+The original code is written by ArcadeusOPS, who are not responsible for misuse of this data gathering tool. Do not use these scripts to navigate websites/devices that take part in any activity that is identified as illegal under the laws and regulations of your government. STAY LEGAL !!<br/>
 
 ## License
 MIT License
