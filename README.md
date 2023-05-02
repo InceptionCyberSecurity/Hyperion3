@@ -71,7 +71,7 @@ The original code is written by ArcadeusOPS, who are not responsible for misuse 
 MIT License
 Copyright (c) ArcadeusOPS
 
-# TODO Future Test Scripts in Bash, Python, Lua or C++
+# TODO Future Test Scripts in Bash, Python, Lua or C++ 
 simlink attacks https://www.anvilventures.com/blog/defeating-secure-boot-with-symlink-attacks.html <br/>
 Vulnerability Analysis using Nessus and OpenVAS via command line <br/>
 Keylogger detection eg https://thegeekpage.com/detect-keylogger-rat/ <br/>
