@@ -2,7 +2,6 @@
 Install ArchLinux, then convert to BlackArch, see https://www.blackarch.org/downloads.html, or use Kali Linux in VirtualBox. <br/>
 Backend scripts used to drive results-based automated IT Security system for arcadeusops.com. Written in Bash and Python3. <br/>
 Written by Nathan Jones nathan.jones@arcadeusops.com <br/>
-<br/>
 ins31.sh is the install script but edit to suit your preferences.<br/>
 test.sh is a short script to confirm all is working ok. <br/>
 
@@ -71,7 +70,7 @@ The original code is written by ArcadeusOPS, who are not responsible for misuse 
 MIT License
 Copyright (c) ArcadeusOPS
 
-# TODO Future Test Scripts in Bash, Python, Lua or C++ 
+# TODO Future Test Scripts in Bash, Python, Lua or C++
 simlink attacks https://www.anvilventures.com/blog/defeating-secure-boot-with-symlink-attacks.html <br/>
 Vulnerability Analysis using Nessus and OpenVAS via command line <br/>
 Keylogger detection eg https://thegeekpage.com/detect-keylogger-rat/ <br/>
