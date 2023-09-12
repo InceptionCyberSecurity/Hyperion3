@@ -10,7 +10,7 @@ userIP="$1" # IP address eg 8.8.8.8
 udir="$2" # directory for reports
 # nmap vuln
 sudo nmap -vv $userIP --script vuln --script vulners -p - -oX usernmap.xml
-xslproc usernmap.xml -o usernmapServer.htm
+xslproc usernmap.xml -o usernmapServer.html
 # OS detection
 sudo nmap -vv -O --osscan-guess --fuzzy $userIP -oX os.xml
 xsltproc os.xml -o os.html
